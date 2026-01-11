@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Plus, Search, Edit } from "lucide-react";
 import styles from "../../../styles/AdminDashboard.module.css";
 import { deleteCategory } from "./actions";
-import DeleteButton from "../../../components/Admin/DeleteButton";
+import DeleteButton from "@/components/Admin/DeleteButton";
 
 export default async function CategoriasPage(props) {
   const searchParams = await props.searchParams;

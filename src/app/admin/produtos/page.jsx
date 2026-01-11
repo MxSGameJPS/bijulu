@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Plus, Search, Edit } from "lucide-react";
 import styles from "../../../styles/AdminDashboard.module.css";
 import { deleteProduct } from "./actions";
-import DeleteButton from "../../../components/Admin/DeleteButton";
+import DeleteButton from "@/components/Admin/DeleteButton";
 
 export default async function ProdutosPage(props) {
   const searchParams = await props.searchParams;

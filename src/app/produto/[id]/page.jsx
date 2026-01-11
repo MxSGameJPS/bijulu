@@ -3,7 +3,7 @@ import styles from "./ProductPage.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ShoppingBag, MessageCircle } from "lucide-react";
-import ProductCard from "../../../components/ProductCard/ProductCard";
+import ProductCard from "@/components/ProductCard/ProductCard";
 import ProductActions from "./ProductActions";
 
 export default async function ProductPage(props) {

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Plus, Search, MapPin, Edit } from "lucide-react";
 import styles from "../../../styles/AdminDashboard.module.css";
 import { deleteStore } from "./actions";
-import DeleteButton from "../../../components/Admin/DeleteButton";
+import DeleteButton from "@/components/Admin/DeleteButton";
 
 export default async function LojasPage(props) {
   const searchParams = await props.searchParams;

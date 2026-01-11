@@ -1,4 +1,4 @@
-import AdminSidebar from "../../components/AdminSidebar/AdminSidebar";
+import AdminSidebar from "@/components/AdminSidebar/AdminSidebar";
 import styles from "../../styles/AdminDashboard.module.css";
 
 // Este layout se aplica a TODAS as páginas dentro de /admin/*

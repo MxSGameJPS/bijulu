@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Plus, Search, User, Edit } from "lucide-react";
 import styles from "../../../styles/AdminDashboard.module.css";
 import { deleteUser } from "./actions";
-import DeleteButton from "../../../components/Admin/DeleteButton";
+import DeleteButton from "@/components/Admin/DeleteButton";
 
 export default async function UsuariosPage(props) {
   const searchParams = await props.searchParams;
