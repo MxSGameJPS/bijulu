@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id        BigInt   @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  login     String   @unique
+  senha     String
+
+  @@map("usuarios")
+}
+
+model Loja {
+  id       BigInt    @id @default(autoincrement())
+  nome     String
+  endereco String?
+  cidade   String?
+  produtos Produto[]
+
+  @@map("lojas")
+}
+
+model Categoria {
+  id                BigInt    @id @default(autoincrement())
+  nomeCategoria     String    @map("nome_categoria")
+  descricaoCategoria String?  @map("descricao_categoria")
+  imagemUrl         String?   @map("imagem_url")
+  produtos          Produto[]
+
+  @@map("categorias")
+}
+
+model Produto {
+  id                BigInt    @id @default(autoincrement())
+  createdAt         DateTime  @default(now()) @map("created_at")
+  nome              String
+  imagemUrl         String?   @map("imagem_url")
+  preco             Decimal   @default(0) @db.Decimal(10, 2)
+  ehLancamento      Boolean   @default(false) @map("eh_lancamento")
+  quantidadeEstoque Int       @default(0) @map("quantidade_estoque")
+  precisaReposicao  Boolean   @default(false) @map("precisa_reposicao")
+  
+  categoriaId       BigInt?   @map("categoria_id")
+  categoria         Categoria? @relation(fields: [categoriaId], references: [id])
+  
+  lojaId            BigInt?   @map("loja_id")
+  loja              Loja?     @relation(fields: [lojaId], references: [id])
+
+  @@map("produtos")
+}

@@ -1,13 +1,20 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Paleta de Cores da Marca */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Destaque (Cliente): Rosa da marca para botões (CTAs) e ícones */
+  --color-destaque: #fa90f0;
+
+  /* Luxo (Logo): Dourado metálico para bordas finas e títulos */
+  --color-luxo: #d4af37;
+
+  /* Fundo (Base): "Snow Pink" - Branco com uma gota de rosa */
+  --background: #fff5f9;
+
+  /* Cards (Produto): Branco Puro para destacar a foto do produto */
+  --card-bg: #ffffff;
+
+  /* Texto Principal: Cinza chumbo levemente arroxeado */
+  --foreground: #4a3b45;
 }
 
 html,
@@ -33,10 +40,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

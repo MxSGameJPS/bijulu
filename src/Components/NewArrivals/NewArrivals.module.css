@@ -1,0 +1,163 @@
+.sectionWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.title span {
+  /* color: var(--color-luxo); */
+}
+
+/* Card Styles */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  border: 1px solid #eee; /* Borda sutil como na imagem */
+  padding: 1rem;
+  position: relative;
+  background: var(--card-bg);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #d8aeb5; /* Um tom rosado/mauve conforme imagem "Novidade" */
+  color: white;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 2px;
+  z-index: 10;
+}
+
+.wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.image {
+  object-fit: contain; /* Bijuterias geralmente ficam melhor com contain ou cover dependendo da foto. Imagem mostra fundo branco. */
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  text-align: center;
+}
+
+.productName {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  height: 2.4em; /* Limitar a 2 linhas */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.installments {
+  font-size: 0.7rem;
+  color: #999;
+}
+
+/* Carousel */
+.embla {
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0; /* Espaço para shadow */
+}
+
+.embla__container {
+  display: flex;
+  /* gap: 1rem;  Removido gap daqui e colocado no slide padding se precisar, ou ajustado no carrossel */
+}
+
+.embla__slide {
+  flex: 0 0 25%; /* 4 por vez */
+  min-width: 0;
+  padding: 0 0.5rem; /* Gap visual */
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.navButton {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.navButton:hover {
+  background: var(--color-destaque);
+  color: white;
+  border-color: var(--color-destaque);
+}
+
+@media (max-width: 900px) {
+  .embla__slide {
+    flex: 0 0 50%; /* 2 por vez no tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .embla__slide {
+    flex: 0 0 100%; /* 1 por vez no mobile */
+  }
+}

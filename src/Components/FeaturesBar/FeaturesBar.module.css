@@ -1,0 +1,54 @@
+.barWrapper {
+  width: 100%;
+  background-color: var(--color-destaque); /* Rosa da marca */
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  flex: 1;
+  min-width: 200px;
+}
+
+.iconWrapper {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.2rem;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

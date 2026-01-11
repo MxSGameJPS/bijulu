@@ -1,0 +1,147 @@
+.headerWrapper {
+  width: 100%;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2); /* Dourado suave */
+}
+
+.topSection {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logoContainer {
+  position: relative;
+  width: 350px; /* Ajuste conforme o tamanho real da logo */
+  height: 100px;
+}
+
+.logo {
+  width: 350px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.socials {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  color: var(--color-destaque);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: var(--color-luxo);
+  transform: scale(1.1);
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.1); /* Linha muito sutil */
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem a {
+  font-family: Arial, Helvetica, sans-serif; /* Pode ser trocado pela fonte do Google Fonts depois */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--foreground);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navItem a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-luxo);
+  transition: width 0.3s ease;
+}
+
+.navItem a:hover {
+  color: var(--color-luxo);
+}
+
+.navItem a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .socials {
+    position: static;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .topSection {
+    flex-direction: column;
+  }
+
+  .navList {
+    gap: 1.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+.cartIconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-destaque);
+  cursor: pointer;
+  transition: transform 0.2s;
+  text-decoration: none;
+}
+
+.cartIconWrapper:hover {
+  transform: scale(1.05);
+  color: var(--color-luxo);
+}
+
+.cartCountBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--color-destaque);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+}

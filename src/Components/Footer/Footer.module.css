@@ -1,0 +1,83 @@
+.footer {
+  background-color: var(--background);
+  border-top: 1px solid rgba(212, 175, 55, 0.2); /* Dourado suave */
+  padding: 4rem 1rem 1rem;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: var(--foreground);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.column {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logoColumn {
+  flex: 1.5;
+}
+
+.columnTitle {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.linkList a {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.linkList a:hover {
+  color: var(--color-destaque);
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.paymentMethods {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.copyright {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}

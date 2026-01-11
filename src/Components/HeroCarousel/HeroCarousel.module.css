@@ -1,0 +1,62 @@
+.embla {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+  aspect-ratio: 1920/578; /* Ratio exato da imagem (1920x578) */
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.embla__slide:hover .image {
+  transform: scale(1.02);
+}
+
+/* Dots for navigation */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot--selected {
+  background-color: var(--color-destaque);
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .embla__slide {
+    aspect-ratio: 16/9; /* Taller on mobile if needed */
+  }
+}
