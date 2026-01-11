@@ -1,21 +1,23 @@
 .barWrapper {
   width: 100%;
-  background-color: var(--color-destaque); /* Rosa da marca */
+  background-color: var(--color-destaque);
   padding: 1.5rem 0;
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
+  overflow: hidden; /* Importante para o embla não vazar */
+}
+
+/* Embla Wrapper */
+.embla {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .container {
-  width: 100%;
-  max-width: 1200px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0 1rem;
+  width: 100%;
 }
 
 .feature {
@@ -24,13 +26,22 @@
   align-items: center;
   text-align: center;
   color: white;
-  flex: 1;
-  min-width: 200px;
+  flex: 1; /* Desktop: Divide espaço igualmente */
+  min-width: 0;
+  padding: 0 1rem;
 }
 
 .iconWrapper {
   margin-bottom: 0.5rem;
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
@@ -47,8 +58,19 @@
 }
 
 @media (max-width: 768px) {
+  .embla {
+    max-width: 100%;
+  }
+
+  /* No mobile, o container é o track do carrossel */
   .container {
-    flex-direction: column;
-    gap: 2rem;
+    /* display flex já está definido */
+    gap: 0; /* Embla não usa gap nativo com slides 100% geralmente, ou configura */
+  }
+
+  .feature {
+    flex: 0 0 100%; /* Mobile: Slide único 100% largura */
+    min-width: 100%;
+    padding: 0 2rem; /* Espaço lateral */
   }
 }

@@ -10,19 +10,22 @@ import styles from "./HeroCarousel.module.css";
 const slides = [
   {
     id: 1,
-    image: "/Banner/bannerHero1.png",
+    imageDesktop: "/Banner/bannerHero1.png",
+    imageMobile: "/BannerMobile/Banner1.png",
     alt: "Coleção de Brincos Exclusivos",
     link: "/categoria/brincos",
   },
   {
     id: 2,
-    image: "/Banner/conjuntos.png",
+    imageDesktop: "/Banner/conjuntos.png",
+    imageMobile: "/BannerMobile/Banner2.png",
     alt: "Conjuntos Perfeitos para Você",
     link: "/categoria/conjuntos",
   },
   {
     id: 3,
-    image: "/Banner/aneis.png",
+    imageDesktop: "/Banner/aneis.png",
+    imageMobile: "/BannerMobile/Banner3.png",
     alt: "Anéis de Luxo e Sofisticação",
     link: "/categoria/aneis",
   },
@@ -58,13 +61,24 @@ export default function HeroCarousel() {
           {slides.map((slide) => (
             <div className={styles.embla__slide} key={slide.id}>
               <Link href={slide.link} className={styles.link}>
-                <Image
-                  src={slide.image}
-                  alt={slide.alt}
-                  fill
-                  className={styles.image}
-                  priority={slide.id === 1} // Prioritize first image
-                />
+                <div className={styles.desktopImageWrapper}>
+                  <Image
+                    src={slide.imageDesktop}
+                    alt={slide.alt}
+                    fill
+                    className={styles.image}
+                    priority={slide.id === 1}
+                  />
+                </div>
+                <div className={styles.mobileImageWrapper}>
+                  <Image
+                    src={slide.imageMobile}
+                    alt={slide.alt}
+                    fill
+                    className={styles.image}
+                    priority={slide.id === 1}
+                  />
+                </div>
               </Link>
             </div>
           ))}

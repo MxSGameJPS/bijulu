@@ -96,20 +96,155 @@
   width: 100%;
 }
 
+/* Mobile Nav Styles */
+.mobileNavWrapper {
+  display: none; /* Escondido no desktop */
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+.hamburgerButton {
+  background: none;
+  border: none;
+  color: var(--color-destaque);
+  cursor: pointer;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  background-color: var(--background);
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out, visibility 0.3s;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  padding: 0 3rem;
+}
+
+.mobileMenu.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* Backdrop escuro - Reativado para menu lateral */
+.overlay {
+  display: block; /* Sempre renderizado mas invisível por opacidade */
+  position: fixed;
+  top: -50%;
+  left: -57%;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileMenuHeader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 1rem 0;
+  border-bottom: none;
+  background-color: var(--background);
+}
+
+.menuTitle {
+  font-weight: 800;
+  color: var(--color-destaque);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: var(--background);
+  align-items: center; /* Centraliza os links */
+}
+
+.mobileNavLink {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2); /* Linha dourada suave */
+  text-decoration: none;
+  color: var(--foreground);
+  text-transform: uppercase;
+  font-size: 1.2rem; /* Fonte maior para menu tela cheia */
+  font-weight: 500;
+  letter-spacing: 2px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-  .socials {
-    position: static;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  .headerWrapper {
+    height: auto;
+    position: relative;
+    padding-bottom: 1rem;
   }
 
   .topSection {
     flex-direction: column;
+    padding: 2rem 1rem 1rem 1rem; /* Mais espaço no topo */
   }
 
-  .navList {
-    gap: 1.5rem;
-    font-size: 0.8rem;
+  /* Logo: ajusta tamanho e garante que não sobreponha */
+  .logoContainer {
+    width: 250px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Sociais: move para baixo da logo ou para o topo direito */
+  .socials {
+    position: static; /* Remove absolute no mobile para fluir naturalmente */
+    transform: none;
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+
+  /* Esconde navegação Desktop */
+  .nav {
+    display: none;
+  }
+
+  /* Mostra navegação Mobile */
+  .mobileNavWrapper {
+    display: block;
+    top: 2rem; /* Alinha com o logo visualmente se necessário, ou use top fixo */
   }
 }
 
